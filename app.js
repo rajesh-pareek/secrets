@@ -126,6 +126,9 @@ app.get("/secrets", function(req, res){
   
 });
 
+app.get("/invisible",function(req,res){
+  res.render("invisible");
+});
 
 app.listen(process.env.PORT||3000, function() {
   console.log("Server started on port 3000.");

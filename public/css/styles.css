@@ -44,7 +44,15 @@ p{
   justify-content: center
   
 }
-
+.box-img{
+  height:300px;
+  width:350px;
+  border-color: #bcb2b2 !important;
+  border-width: 25px !important;
+  background-image: url("https://i.imgflip.com/1q9h3z.jpg");
+  background-size: cover;
+ 
+}
 
 .register-btn{
   flex-grow: 1;
@@ -55,6 +63,7 @@ p{
   font-size: 2rem;
   color: #fff;
   background-color: #000;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
 
