@@ -16,17 +16,7 @@ app.use(bodyParser.urlencoded({
 }));
 
  
-
-
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.DB_URL);
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-}
+mongoose.connect("mongodb+srv://rajeshpareekdevo:ZtFXTVFswLyOCwxn@cluster0.olrsf8b.mongodb.net/userDB",{useNewUrlparser:true});
 
 
 const userSchema = new mongoose.Schema ({
@@ -129,9 +119,6 @@ app.get("/secrets", function(req, res){
 });
 
 
-
-connectDB().then(() => {
-  app.listen(process.env.PORT||3000, () => {
-      console.log("listening for requests");
-  })
-})
+app.listen(process.env.PORT||3000, function() {
+  console.log("Server started on port 3000.");
+});
