@@ -1,0 +1,86 @@
+
+body {
+  /* background-color: #E8ECEF; */
+  background-color: #1d1919;
+  /* background-image: url("https://wallpaperaccess.com/full/2008522.jpg");
+  background-size: cover;
+  background-image:url("https://w0.peakpx.com/wallpaper/26/409/HD-wallpaper-depressed-emotional-ptsd-sad-wounded-thumbnail.jpg"); */
+ /*  background-image: url("https://p0.pxfuel.com/preview/203/982/336/astronaut-background-cartoon-cosmonaut.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  
+}
+
+.row{
+  margin-top: auto;
+  justify-content: center;
+}
+
+h1,a{
+  font-family: 'Delicious Handrawn', cursive;
+  font-family: 'Dongle', sans-serif;
+}
+p{
+  font-family: 'Dongle', sans-serif;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+::placeholder{
+  font-family: 'Dongle', sans-serif;
+}
+
+.box {
+  padding:6px;
+  max-width: 400px;
+  margin: 50px auto;
+  background:white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  opacity:90%;
+  
+}
+.box-btn{
+  display: flex;
+  justify-content: center
+  
+}
+
+
+.register-btn{
+  flex-grow: 1;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}
+
+
+
+#footer{
+  background-color:#1d1919;
+  text-align: center;
+  padding:5% 10%;
+  margin: 0 !important;
+  display:flex;
+  justify-content: space-around;
+  
+}
+
+.last-one{
+  color:rgb(84, 83, 83);
+  
+}
+
+.social-icon{
+  color:white;
+  margin:2% 5%;
+  transition:0.4s;
+}
+
+
+.social-icon:hover{
+  color:grey;
+}

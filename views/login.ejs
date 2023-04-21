@@ -1,0 +1,61 @@
+<%- include('partials/header') %>
+
+  <div class="row">
+
+  
+    <div class="box">
+      <form action="/login" method="POST">
+        <div class="form-group">
+          <!-- <label for="email">Email</label> -->
+          <input type="email" class="form-control" name="username" placeholder="email">
+        </div>
+        <div class="form-group">
+          <!-- <label for="password">Password</label> -->
+          <input type="password" class="form-control" name="password" placeholder="password">
+        </div>
+
+
+        <div class="box-btn">
+          <button style="width:fit-content;" type="submit" class="btn btn-dark"
+            style="font-family: 'Dongle', sans-serif;">Login</button>
+        </div>
+
+
+
+      </form>
+
+
+    </div>
+  </div>
+
+  <!-- Makes POST request to /register route -->
+
+
+
+
+  <div style=" height:200px; background-color:#1d1919;;">
+
+  </div>
+
+
+
+
+
+
+  <%- include('partials/footer') %>
+
+
+
+    <!-- 
+
+<form action="/login" method="POST">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" name="username">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" name="password">
+  </div>
+  <button type="submit" class="btn btn-dark">Login</button>
+</form> -->
