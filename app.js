@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-mongoose.set("useCreateIndex", true); 
+ 
 
 
 const connectDB = async () => {
