@@ -64,7 +64,7 @@ app.post("/login", function(req, res){
   const username = req.body.username;
   const password = req.body.password;
 
-  
+  userid=username;
   User.findOne({email:username}).then(function(foundUser){
     if (foundUser) {
       bcrypt.compare(password, foundUser.password, function(err, result) {
@@ -93,7 +93,7 @@ app.get("/submit", function(req, res){
 app.post("/submit", function(req, res){
 
   const submittedSecret = req.body.secret;
- console.log(submittedSecret);
+ //console.log(submittedSecret);
   User.findOne({email:userid}).then(function(foundUser){
     console.log("in here");
       foundUser.secret = submittedSecret;
