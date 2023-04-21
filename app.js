@@ -40,14 +40,18 @@ app.get("/register", function(req, res){
   res.render("register");
 });
 
+var userid="";
+
 app.post("/register", function(req, res){
 
+  userid=req.body.username;
+
   bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
-    const newUser =  new User({
+    var newUser =User({
       email: req.body.username,
       password: hash
     });
-    newUser.save().then(function(result){
+    newUser.save().then(function(){
       res.redirect("/secrets");
     }).catch(function(err){
       console.log("Here I got eroor",err);
@@ -60,6 +64,7 @@ app.post("/login", function(req, res){
   const username = req.body.username;
   const password = req.body.password;
 
+  
   User.findOne({email:username}).then(function(foundUser){
     if (foundUser) {
       bcrypt.compare(password, foundUser.password, function(err, result) {
@@ -86,17 +91,20 @@ app.get("/submit", function(req, res){
 });
 
 app.post("/submit", function(req, res){
-  const submittedSecret = req.body.secret;
 
-  User.findOne({email:req.body.username}).then(function(foundUser){
-    if (foundUser) {
+  const submittedSecret = req.body.secret;
+ console.log(submittedSecret);
+  User.findOne({email:userid}).then(function(foundUser){
+    console.log("in here");
       foundUser.secret = submittedSecret;
+
       foundUser.save().then(function(){
+        console.log("in save");
         res.redirect("/secrets");
       }).catch(function(err){
         console.log(err);
       })    
-    }
+
   }).catch(function(err){
     console.log(err);
   });
