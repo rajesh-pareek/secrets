@@ -15,7 +15,18 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-mongoose.connect(process.env.DB_URL, {useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.set("useCreateIndex", true); 
+
+
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.DB_URL);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+}
 
 
 const userSchema = new mongoose.Schema ({
@@ -49,7 +60,7 @@ app.post("/register", function(req, res){
     newUser.save().then(function(result){
       res.redirect("/secrets");
     }).catch(function(err){
-      console.log(err);
+      console.log("Here I got eroor",err);
     });
   });
 
@@ -118,6 +129,9 @@ app.get("/secrets", function(req, res){
 });
 
 
-app.listen(3000, function() {
-  console.log("Server started on port 3000.");
-});
+
+connectDB().then(() => {
+  app.listen(process.env.PORT||3000, () => {
+      console.log("listening for requests");
+  })
+})
